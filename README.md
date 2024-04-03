@@ -1,4 +1,5 @@
 # 29th_study
+
 알고리즘 스터디 29주차
 
 <br/>
@@ -71,7 +72,30 @@ print(cnt)
 ### [상미](/나머지%20합/상미.py)
 
 ```py
+import sys
+input = sys.stdin.readline
 
+N, M = map(int, input().split())
+nums = [0] + list(map(int, input().split()))
+
+tmp = 0
+rest = [0] * (N+1)
+dp = [0]*(N+1)
+for i in range(1, N+1):
+    rest[i] = nums[i] % M     # num을 M으로 나눈 나머지 리스트
+
+for i in range(1, N+1):
+    tmp = (tmp + rest[i]) % M   # 현재 값에 더하고 M으로 나눈 값
+    if tmp == 0:
+        dp[i] = dp[i-1]+1
+    else:
+        dp[i] = dp[i-1]
+
+ans = 0
+for i in range(N, 0, -1):
+    ans += (dp[N] - dp[i])
+
+print(ans)
 ```
 
 ### [성구](/나머지%20합/성구.py)
@@ -104,20 +128,20 @@ def main():
 
     # settings
     remain = defaultdict(int)
-    
+
     # 나머지의 개수 세기(구간합 구하기 + 나머지 수 세기)
     remain[arr[0]%M] += 1
     for i in range(1, N):
         arr[i] = arr[i] + arr[i-1]
         remain[arr[i] % M] += 1
-    
+
     # 초기값 -> 나머지가 0인 개수
     ans = remain[0]
 
     for cnt in remain.values():
         # cnt C 2
         ans += cnt * (cnt-1) // 2
-    
+
     # 출력
     print(ans)
 
@@ -164,8 +188,6 @@ print(total)
 ```
 
 <br/>
-
-
 
 </details>
 
@@ -310,7 +332,7 @@ if S < min_limit:
     pirnt(-1)
 else:
     rest = S - min_limit
-    dp = [30000001] * (rest + 1) 
+    dp = [30000001] * (rest + 1)
     dp[0] = 1
     for i in range(N-1, -1, -1):
         j = 0
@@ -337,7 +359,7 @@ for i in range(N):
     base += coin[i]*coin_cnt[i]
     base_cnt += coin_cnt[i]
 M = S-base
-DP = [1000000]*(M+1) # 남은 금액을 DP로 
+DP = [1000000]*(M+1) # 남은 금액을 DP로
 DP[0] = 0
 for i in range(N):
     for j in range(1, M+1):   # i동전까지 고려해 j원 만들기
@@ -514,6 +536,7 @@ print(ans)
 ```py
 
 ```
+
 </details>
 
 <br/><br/>
