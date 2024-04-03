@@ -150,7 +150,7 @@ total = 0
 for i in range(N):
     tmp = 0
     cnt = 0
-    if check[i]==0:     # j로 확정된 적이 없으면
+    if check[i]==0:     # i로 확정된 적이 없으면
         for j in range(i, N):
             tmp += arr[j]
             if tmp%M==0:
