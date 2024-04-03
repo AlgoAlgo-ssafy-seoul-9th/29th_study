@@ -520,4 +520,7 @@ print(ans)
 <details markdown="1">
 <summary>접기/펼치기</summary>
 
+[알고리즘 설명](https://l1m3kun.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%88%84%EC%A0%81%ED%95%A9Prefix-Sum)
+[문제 설명](https://l1m3kun.tistory.com/entry/10986-%EB%82%98%EB%A8%B8%EC%A7%80-%ED%95%A9)
+
 </details>
