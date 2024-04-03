@@ -514,6 +514,9 @@ print(ans)
 ```py
 
 ```
+</details>
+
+<br/><br/>
 
 # 알고리즘 설명
 
